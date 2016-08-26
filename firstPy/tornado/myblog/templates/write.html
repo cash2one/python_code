@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block body %}
+
+	
+
+
+
+
+<div class="container">
+<div class="row">
+	<div class="col-md-12">
+		<div style="box-shadow:5px 5px 20px #CCC;background-color:white;padding:20px 30px;margin-bottom:40px;">
+		<h2 class="text-center">TO WRITE A BLOG!</h2>
+		
+			<form class="form-horizontal" method="post" action="/writeok">
+				<div class="form-group">
+    					<label for="inputEmail3" class="col-sm-1 control-label">title</label>
+    						<div class="col-sm-11">
+      						<input class="form-control" placeholder="the title" name="title">
+   						 </div>
+  				</div>
+  				<div class="form-group">
+    					<label for="inputEmail3" class="col-sm-1 control-label">body</label>
+    						<div class="col-sm-11">
+      						<input class="form-control" placeholder="the body" name="body">
+   						 </div>
+  				</div>
+  				<div class="form-group">
+    					<label for="inputEmail3" class="col-sm-1 control-label">summury</label>
+    						<div class="col-sm-11">
+      						<input class="form-control" placeholder="the summury" name="summury">
+   						 </div>
+  				</div>
+				<div class="form-group">
+    					<label for="inputEmail3" class="col-sm-1 control-label">category</label>
+    						<div class="col-sm-11">
+      						<input class="form-control" placeholder="the category" name="category">
+   						 </div>
+  				</div>
+  				
+                        <div class="form-group">
+                          <label for="inputEmail3" class="col-sm-1 control-label">category</label>
+                          <div class="col-sm-11">
+                          {% for category in the_category %}
+                          <div class="col-md-3"><a class="btn btn-info btn-large btn-block col-md-3 form-btn write-form-btn">{{ category['tag'] }}</a></div>
+                          {% end %}
+                          <div class="col-md-3"><a class="btn btn-info btn-large btn-block col-md-3 form-add write-form-btn">增加tag <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></div>
+                          </div>
+                        </div>
+                        <div class="form-group" id="form_category" style="display:none">
+                         <label for="inputEmail3" class="col-sm-1 control-label">category</label>
+                <div class="col-sm-11">
+                  <input class="form-control" placeholder="the category">
+               </div>
+          </div>
+  				
+  				<input type="submit" value="Go" class="btn btn-large btn-block btn-primary">
+			</form>
+			
+		</div>
+		
+  	</div>
+  	
+</div>
+</div>
+
+
+
+
+
+{% end %}
